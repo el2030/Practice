@@ -4,7 +4,21 @@ public class Book {
     private String author;
     private float price;
 
-    public Book() {
+    public Book(int bookNo, String title, String author, float price) {
+        this.bookNo = bookNo;
+        if (title.length()<4){
+            System.out.println("Title of the book must have at least 4 characters");
+        }
+        else {
+            this.title = title;
+        }
+        this.author = author;
+        if (price < 1 || price > 5000) {
+            System.out.println("Price must be in the range 1 to 5000");
+        }
+        else {
+            this.price = price;
+        }
         BookDetails.increaseBookCount();
     }
 

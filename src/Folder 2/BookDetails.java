@@ -6,35 +6,34 @@ public class BookDetails {
     static Book[] bookCase = new Book[5000];
 
     public static void main(String[] args) {
+        String title;
+        String author;
+        int price;
+        int bookNo;
 
         for (int i=0; i<3; i++){
-            Book book = new Book();
             Scanner sc = new Scanner(System.in);
             System.out.println("Please enter the title of the book, must have at least 4 characters");
-            String b = sc.nextLine();
-            int stringLength = b.length();
+            title = sc.nextLine();
+            int stringLength = title.length();
             if (stringLength<4){
                 System.out.println("The title of the book must have at least 4 characters.");
             }
-            else{
-                book.setTitle(b);
-            }
+
             System.out.println("Please enter the price of the book, must be in the range of 1 to 5000");
-            int num = sc.nextInt();
-            if (num<1 || num > 5000){
+            price = sc.nextInt();
+            if (price<1 || price > 5000){
                 System.out.println("Price must be between 1 and 5000");
             }
-            else{
-                book.setPrice(num);
-                bookCase[num] = book;
-            }
+            sc.nextLine();
             System.out.println("Please enter the author of the book");
-            b = sc.nextLine();
-            book.setAuthor(b);
+            author = sc.nextLine();
             System.out.println("Please enter the book number, must be in the range of 1 to 5000");
-            num = sc.nextInt();
-            book.setBookNo(num);
+            bookNo = sc.nextInt();
+            Book book = new Book(bookNo,title,author,price);
+            bookCase[bookNo] = book;
         }
+        System.out.println("book count is: " + getBookCount());
     }
 
     public static int getBookCount(){
