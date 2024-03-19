@@ -1,3 +1,5 @@
+package Folder3;
+
 public class TestCircle {
     public static void main(String[] args) {
         Circle redCircle = new Circle();

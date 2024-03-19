@@ -1,3 +1,5 @@
+package Folder1;
+
 public class LessThanN {
     public static void main(String[] args) {
 

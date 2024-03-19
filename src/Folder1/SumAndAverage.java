@@ -1,3 +1,5 @@
+package Folder1;
+
 import java.util.Scanner;
 
 public class SumAndAverage {

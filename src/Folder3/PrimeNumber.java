@@ -1,3 +1,5 @@
+package Folder3;
+
 public class PrimeNumber {
 
     public static int primeCheck(int num){
