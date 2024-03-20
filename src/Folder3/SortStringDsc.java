@@ -9,15 +9,13 @@ public class SortStringDsc {
     public static String sortAsc(String input){
         int l = input.length();
         char[] charArray = new char[l];
-        String result = "";
-        for (int i=0; i<l; i++){
-            charArray[i] = input.charAt(i);
-            }
+        StringBuffer result = new StringBuffer();
+        input.getChars(0,l,charArray,0);
         Arrays.sort(charArray);
         for (int i=l-1; i>-1; i--) {
-            result += charArray[i];
+            result.append(charArray[i]);
 
         }
-        return result;
+        return result.toString();
     }
 }
