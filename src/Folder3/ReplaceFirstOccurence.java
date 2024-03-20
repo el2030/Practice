@@ -9,21 +9,12 @@ public class ReplaceFirstOccurence {
         int l = input.length();
         String vowels = "AEIOUaeiou";
         int v = vowels.length();
-        String result = "";
-        for (int i = 0; i < l; i++) {
-            for (int j=0; j<v; j++){
-                if (input.charAt(i) == vowels.charAt(j)){
-                    result += '-';
-                    i++;
-                    while(i<l){
-                        result += input.charAt(i);
-                        i++;
-                    }
-                    return result;
-                }
+        for (int i=0; i<l; i++){
+            if (vowels.contains(String.valueOf(input.charAt(i)))){
+                input = input.replace(input.charAt(i), '-');
+                return input;
             }
-            result += input.charAt(i);
         }
-        return result;
+        return input;
     }
 }
