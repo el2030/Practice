@@ -14,7 +14,6 @@ public class SortStringDsc {
         Arrays.sort(charArray);
         for (int i=l-1; i>-1; i--) {
             result.append(charArray[i]);
-
         }
         return result.toString();
     }
