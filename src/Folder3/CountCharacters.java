@@ -14,19 +14,19 @@ public class CountCharacters {
         int specialCount=0;
         String nums = "0123456789";
         String alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String update = "";
+        StringBuilder update = new StringBuilder();
         for (int i=0; i<l; i++){
             if (nums.contains(String.valueOf(input.charAt(i)))){
                 numCount++;
                 continue;
             } else {
-                update += input.charAt(i);
+                update.append(input.charAt(i));
             }
         }
-        update = update.toUpperCase();
-        int m = update.length();
+        String updateString = update.toString().toUpperCase();
+        int m = updateString.length();
         for (int i=0; i<m; i++){
-            if (alphabets.contains(String.valueOf(update.charAt(i)))){
+            if (alphabets.contains(String.valueOf(updateString.charAt(i)))){
                 alphaCount++;
             } else {
                 specialCount++;
