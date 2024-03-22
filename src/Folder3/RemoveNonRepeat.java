@@ -6,15 +6,15 @@ public class RemoveNonRepeat {
     }
     public static String removeN(String input){
         int l = input.length();
-        String result = "";
+        StringBuilder result = new StringBuilder();
         if (input.charAt(0) == input.charAt(1)){
-            result += input.charAt(0);
+            result.append(input.charAt(0));
         }
         for (int i=1; i<l; i++){
             if (input.charAt(i) == input.charAt(i-1)){
-                result += input.charAt(i);
+                result.append(input.charAt(i));
             }
         }
-        return result;
+        return result.toString();
     }
 }

@@ -6,13 +6,20 @@ public class RemoveSpace {
 
     }
     public static String removeS(String input){
-        int l = input.length();
-        String result = "";
-        for (int i =0; i<l; i++){
-            if (input.charAt(i) != ' '){
-                result+=input.charAt(i);
-            }
+        //Not using String.split();
+//        int l = input.length();
+//        StringBuilder result = new StringBuilder();
+//        for (int i =0; i<l; i++){
+//            if (input.charAt(i) != ' '){
+//                result.append(input.charAt(i));
+//            }
+//        }
+//        return result.toString();
+        String[] stringArray = input.split(" ");
+        StringBuilder result = new StringBuilder();
+        for (String word: stringArray){
+            result.append(word);
         }
-        return result;
+        return result.toString();
     }
 }

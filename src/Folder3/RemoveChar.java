@@ -7,12 +7,12 @@ public class RemoveChar {
     }
     public static String remove(String input, char c){
         int l = input.length();
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i=0; i<l; i++){
             if (input.charAt(i) != c){
-                result += input.charAt(i);
+                result.append(input.charAt(i));
             }
         }
-        return result;
+        return result.toString();
     }
 }
