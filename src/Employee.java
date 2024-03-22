@@ -8,6 +8,13 @@ public class Employee {
     private static Employee[] employeeData = new Employee[99];
 
     public Employee(String name, int id, int age) {
+        if(id<1){
+            try{
+                throw new EmployeeInvalidIdException("Employee ID cannot be less than 1");
+            } catch (EmployeeInvalidIdException e) {
+                e.printStackTrace();
+            }
+        }
         this.name = name;
         this.id = id;
         this.age = age;
