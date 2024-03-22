@@ -1,6 +1,6 @@
 package HashMapExamples;
 
-public class TestStudentHashMap {
+public class TestHashMap {
     public static void main(String[] args) {
         Student student = new Student();
         student.setNames();
