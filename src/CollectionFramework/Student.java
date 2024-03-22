@@ -55,8 +55,10 @@ public class Student {
             if (result.equals(stuName)) {
                 iterator.remove();
                 System.out.println(stuName + " Has been REMOVED");
+                return;
             }
         }
+        System.out.println(stuName + " is NOT in the list");
     };
 
 }
