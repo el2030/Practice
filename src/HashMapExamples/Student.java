@@ -1,6 +1,7 @@
 package HashMapExamples;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -22,9 +23,17 @@ public class Student {
             System.out.println("The map is empty");
             return;
         }
-        empNames.forEach((key, value) -> {
-            System.out.println(value);
-        });
+        //Implement using lambda and forEach()
+//        empNames.forEach((key, value) -> {
+//            System.out.println(value);
+//        });
+        Set<String> keyset = empNames.keySet();
+        Iterator<String> iterator = keyset.iterator();
+        String key = "";
+        while (iterator.hasNext()){
+             key = iterator.next();
+            System.out.println(empNames.get(key));
+        }
     }
     public void getName(String key){
         if (empNames.isEmpty()){
