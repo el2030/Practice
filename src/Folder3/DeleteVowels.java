@@ -7,16 +7,18 @@ public class DeleteVowels {
     }
 
     public static String deleteV(String input){
-        String vowels = "AEIOUaeiou";
-        StringBuilder result = new StringBuilder();
-        int v = vowels.length();
-        int l = input.length();
-        for (int i=0; i<l; i++){
-            if (!vowels.contains(String.valueOf(input.charAt(i)))){
-                result.append(input.charAt(i));
-            }
-        }
-        return result.toString();
+        //Not using String.replace();
+//        String vowels = "AEIOUaeiou";
+//        StringBuilder result = new StringBuilder();
+//        int v = vowels.length();
+//        int l = input.length();
+//        for (int i=0; i<l; i++){
+//            if (!vowels.contains(String.valueOf(input.charAt(i)))){
+//                result.append(input.charAt(i));
+//            }
+//        }
+//        return result.toString();
+        return input.replaceAll("[AEIOUaeiou]","");
     }
 
 }

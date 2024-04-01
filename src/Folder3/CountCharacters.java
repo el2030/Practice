@@ -12,26 +12,32 @@ public class CountCharacters {
         int numCount=0;
         int alphaCount=0;
         int specialCount=0;
-        String nums = "0123456789";
-        String alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        StringBuilder update = new StringBuilder();
-        for (int i=0; i<l; i++){
-            if (nums.contains(String.valueOf(input.charAt(i)))){
-                numCount++;
-                continue;
-            } else {
-                update.append(input.charAt(i));
-            }
-        }
-        String updateString = update.toString().toUpperCase();
-        int m = updateString.length();
-        for (int i=0; i<m; i++){
-            if (alphabets.contains(String.valueOf(updateString.charAt(i)))){
-                alphaCount++;
-            } else {
-                specialCount++;
-            }
-        }
+        //Not using String.replaceAll();
+//        String nums = "0123456789";
+//        String alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        StringBuilder update = new StringBuilder();
+//        for (int i=0; i<l; i++){
+//            if (nums.contains(String.valueOf(input.charAt(i)))){
+//                numCount++;
+//                continue;
+//            } else {
+//                update.append(input.charAt(i));
+//            }
+//        }
+//        String updateString = update.toString().toUpperCase();
+//        int m = updateString.length();
+//        for (int i=0; i<m; i++){
+//            if (alphabets.contains(String.valueOf(updateString.charAt(i)))){
+//                alphaCount++;
+//            } else {
+//                specialCount++;
+//            }
+//        }
+        String noNums = input.replaceAll("\\d","");
+        numCount = l - noNums.length();
+        String noSpecial = noNums.replaceAll("[^a-zA-Z]","");
+        alphaCount = noSpecial.length();
+        specialCount = l - numCount - alphaCount;
         System.out.println("The count for digits is " + numCount);
         System.out.println("The count for alphabets is " + alphaCount);
         System.out.println("The count for special characters is " + specialCount);

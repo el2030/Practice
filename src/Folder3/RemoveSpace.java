@@ -3,6 +3,7 @@ package Folder3;
 public class RemoveSpace {
     public static void main(String[] args) {
         System.out.println(removeS("My Name Is Space"));
+        System.out.println(removeS("Testing  double  spaces  ."));
 
     }
     public static String removeS(String input){
@@ -15,11 +16,13 @@ public class RemoveSpace {
 //            }
 //        }
 //        return result.toString();
-        String[] stringArray = input.split(" ");
-        StringBuilder result = new StringBuilder();
-        for (String word: stringArray){
-            result.append(word);
-        }
-        return result.toString();
+        //Not using String.replace();
+//        String[] stringArray = input.split(" ");
+//        StringBuilder result = new StringBuilder();
+//        for (String word: stringArray){
+//            result.append(word);
+//        }
+//        return result.toString();
+        return input.replace(" ","");
     }
 }
